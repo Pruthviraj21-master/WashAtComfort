@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WashAtComfort — Car Wash at Your Parking, Pune</title>
+    <meta
+      name="description"
+      content="Send your car's photos, get a fixed quote in 2 hours, and get it washed at your own parking spot in Pune. Pay after you check the work."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <link rel="stylesheet" href="style.css" />
+    <!-- ================= HEADER ================= -->
+    <header>
+      <div class="wrap nav-row">
+        <div class="brand">
+          <span class="brand-mark">W</span>
+          <span>WashAtComfort</span>
+          <span class="brand-tag hide-mobile">PUNE</span>
+        </div>
+        <nav class="links">
+          <button data-nav="how">How it Works</button>
+          <button data-nav="pricing">Services</button>
+          <button data-nav="booking">Book Now</button>
+        </nav>
+        <div class="nav-actions">
+          <button data-nav="booking" class="btn btn-primary hide-mobile">
+            Book Wash
+          </button>
+          <button
+            id="menuToggle"
+            class="icon-btn hide-desktop"
+            aria-label="Menu"
+          ></button>
+        </div>
+      </div>
+      <div
+        id="mobilePanel"
+        class="mobile-panel hide-desktop"
+        style="display: none"
+      >
+        <button class="nav-item" data-nav="how">How it Works</button>
+        <button class="nav-item" data-nav="pricing">Services</button>
+        <button class="nav-item" data-nav="booking">Book Now</button>
+      </div>
+    </header>
+
+    <div class="trust-bar">
+      <div class="wrap trust-row">
+        <span class="trust-item"
+          ><span class="trust-dot" data-icon="pin"></span> We Come to Your
+          Parking</span
+        >
+        <span class="trust-item"
+          ><span class="trust-dot" data-icon="camera"></span> Photo-Based Quote
+          in 2 Hours</span
+        >
+        <span class="trust-item"
+          ><span class="trust-dot" data-icon="shield"></span> Pay After You
+          Check the Work</span
+        >
+      </div>
+    </div>
+
+    <!-- ================= HERO ================= -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="badge"
+            ><span
+              style="
+                width: 6px;
+                height: 6px;
+                border-radius: 999px;
+                background: var(--success);
+              "
+            ></span>
+            Live in Pune — Baner, Wakad, Kothrud &amp; more</span
+          >
+          <h1>Car Wash at Your<br />Parking in Pune.</h1>
+          <p class="sub">
+            Skip the trip to a service center. Send us your car's photos, get a
+            fixed quote in 2 hours, and a verified local washer comes straight
+            to your society parking.
+          </p>
+          <div class="hero-ctas">
+            <button data-nav="booking" class="btn btn-primary">
+              Book Your Wash
+            </button>
+            <a
+              id="heroWaBtn"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-ghost"
+              ><span data-icon="chat" class="icon"></span> Chat on WhatsApp</a
+            >
+          </div>
+          <!--
+        These 3 numbers describe policies you control (turnaround time, water
+        used, verification step) rather than review counts — safe to publish
+        even before you have customers. Edit freely, just keep them truthful.
+      -->
+          <div class="stat-grid">
+            <div class="stat"><b>2 Hrs</b><span>QUOTE TURNAROUND</span></div>
+            <div class="stat"><b>&lt;15L</b><span>WATER PER WASH</span></div>
+            <div class="stat">
+              <b>100%</b><span>PHOTO-VERIFIED QUOTES</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="position: relative">
+          <div class="hero-card">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+              "
+            >
+              <span
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  font-size: 11px;
+                  font-weight: 700;
+                  letter-spacing: 0.05em;
+                  opacity: 0.7;
+                "
+                ><span data-icon="car" class="icon"></span> LIVE BOOKING</span
+              >
+              <span
+                style="
+                  font-size: 11px;
+                  padding: 5px 10px;
+                  border-radius: 999px;
+                  background: rgba(255, 255, 255, 0.1);
+                "
+                >Baner • Today</span
+              >
+            </div>
+            <div class="mini">
+              <div style="display: flex; gap: 12px">
+                <div
+                  style="
+                    width: 48px;
+                    height: 48px;
+                    border-radius: 12px;
+                    background: var(--ink);
+                    color: var(--bg);
+                    display: grid;
+                    place-items: center;
+                    flex-shrink: 0;
+                  "
+                >
+                  <span data-icon="car" class="icon"></span>
+                </div>
+                <div style="min-width: 0">
+                  <div style="font-weight: 600; font-size: 14px">
+                    Swift • MH12 • Interior + Exterior
+                  </div>
+                  <div
+                    style="
+                      font-size: 12px;
+                      color: var(--ink-soft);
+                      margin-top: 2px;
+                    "
+                  >
+                    Baner society • One-time wash
+                  </div>
+                  <div
+                    style="
+                      margin-top: 8px;
+                      display: inline-flex;
+                      align-items: center;
+                      gap: 6px;
+                      font-size: 11px;
+                      font-weight: 600;
+                      padding: 5px 10px;
+                      border-radius: 999px;
+                      background: var(--success-bg);
+                      color: var(--success);
+                    "
+                  >
+                    <span
+                      data-icon="check"
+                      class="icon"
+                      style="width: 12px; height: 12px"
+                    ></span>
+                    Quote sent within 2 hrs
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              style="
+                margin-top: 18px;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+                text-align: center;
+              "
+            >
+              <div
+                style="
+                  background: rgba(255, 255, 255, 0.08);
+                  border-radius: 12px;
+                  padding: 12px 6px;
+                "
+              >
+                <div style="font-size: 13px; font-weight: 600">At Parking</div>
+                <div style="font-size: 10px; opacity: 0.6; margin-top: 3px">
+                  No Travel
+                </div>
+              </div>
+              <div
+                style="
+                  background: rgba(255, 255, 255, 0.08);
+                  border-radius: 12px;
+                  padding: 12px 6px;
+                "
+              >
+                <div style="font-size: 13px; font-weight: 600">Photo Quote</div>
+                <div style="font-size: 10px; opacity: 0.6; margin-top: 3px">
+                  In 2 Hrs
+                </div>
+              </div>
+              <div
+                style="
+                  background: rgba(255, 255, 255, 0.08);
+                  border-radius: 12px;
+                  padding: 12px 6px;
+                "
+              >
+                <div style="font-size: 13px; font-weight: 600">Pay After</div>
+                <div style="font-size: 10px; opacity: 0.6; margin-top: 3px">
+                  You Check
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="float-card">
+            <div
+              style="
+                width: 38px;
+                height: 38px;
+                border-radius: 999px;
+                background: var(--primary);
+                color: var(--primary-ink);
+                display: grid;
+                place-items: center;
+                flex-shrink: 0;
+              "
+            >
+              <span
+                data-icon="sparkle"
+                class="icon"
+                style="width: 16px; height: 16px"
+              ></span>
+            </div>
+            <div>
+              <div style="font-size: 12px; font-weight: 600">
+                Transparent Pune rates
+              </div>
+              <div style="font-size: 11px; color: var(--ink-soft)">
+                Fixed quote, no upsell
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section
+      id="how"
+      style="
+        background: var(--bg-sunk);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      "
+    >
+      <div class="wrap">
+        <div class="section-head">
+          <h2>How it works — 3 steps</h2>
+          <p style="max-width: 300px; font-size: 13px; color: var(--ink-soft)">
+            No app to download. Just WhatsApp and a short form.
+          </p>
+        </div>
+        <div class="grid-3">
+          <div class="card step-card">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+              "
+            >
+              <div class="step-icon">
+                <span data-icon="camera" class="icon"></span>
+              </div>
+              <span class="step-num">01</span>
+            </div>
+            <h3 style="font-size: 17px">Send details + car photos</h3>
+            <p
+              style="
+                margin-top: 8px;
+                font-size: 13.5px;
+                color: var(--ink-soft);
+                line-height: 1.6;
+              "
+            >
+              Fill the form with your area, car type and up to 3 photos. Takes
+              about a minute.
+            </p>
+          </div>
+          <div class="card step-card">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+              "
+            >
+              <div class="step-icon">
+                <span data-icon="users" class="icon"></span>
+              </div>
+              <span class="step-num">02</span>
+            </div>
+            <h3 style="font-size: 17px">Get a fixed quote in 2 hours</h3>
+            <p
+              style="
+                margin-top: 8px;
+                font-size: 13.5px;
+                color: var(--ink-soft);
+                line-height: 1.6;
+              "
+            >
+              We check with verified washers near your society and share the
+              best fixed quote on WhatsApp.
+            </p>
+          </div>
+          <div class="card step-card">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+              "
+            >
+              <div class="step-icon">
+                <span data-icon="wrench" class="icon"></span>
+              </div>
+              <span class="step-num">03</span>
+            </div>
+            <h3 style="font-size: 17px">Washer comes to your parking</h3>
+            <p
+              style="
+                margin-top: 8px;
+                font-size: 13.5px;
+                color: var(--ink-soft);
+                line-height: 1.6;
+              "
+            >
+              A verified local washer arrives with their own kit. You check the
+              work, then pay.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PRICING ================= -->
+    <section id="pricing">
+      <div class="wrap">
+        <div style="display: flex; align-items: center; gap: 10px">
+          <div
+            style="
+              width: 32px;
+              height: 32px;
+              border-radius: 999px;
+              background: var(--primary);
+              color: var(--primary-ink);
+              display: grid;
+              place-items: center;
+            "
+          >
+            <span
+              data-icon="sparkle"
+              class="icon"
+              style="width: 15px; height: 15px"
+            ></span>
+          </div>
+          <h2 style="font-size: 26px">Services &amp; Pune Rates</h2>
+        </div>
+        <p
+          style="
+            margin-top: 12px;
+            font-size: 13.5px;
+            color: var(--ink-soft);
+            max-width: 560px;
+          "
+        >
+          <!-- TODO: confirm these are the prices you actually want to charge before publishing -->
+          Simple, transparent pricing for Pune societies. Fixed quote after
+          seeing your car's photos. Pay after you check the work.
+        </p>
+        <div
+          style="margin-top: 28px; display: grid; gap: 22px"
+          class="pricing-grid"
+        >
+          <div class="card" style="overflow: hidden">
+            <div style="overflow-x: auto">
+              <table class="price-table" style="min-width: 520px">
+                <thead>
+                  <tr>
+                    <th>Service</th>
+                    <th>One-time</th>
+                    <th>Monthly (8×)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Hatchback — Exterior + Interior + Vacuum</td>
+                    <td>₹300–350</td>
+                    <td>₹900–1100</td>
+                  </tr>
+                  <tr>
+                    <td>Sedan — Full wash + dashboard + tyre</td>
+                    <td>₹350–450</td>
+                    <td>₹1000–1200</td>
+                  </tr>
+                  <tr>
+                    <td>SUV / 7-seater — Foam + interior detail</td>
+                    <td>₹450–550</td>
+                    <td>₹1100–1300</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="price-note">
+                <span
+                  data-icon="shield"
+                  class="icon"
+                  style="width: 15px; height: 15px; flex-shrink: 0"
+                ></span>
+                Monthly plans are arranged directly with your washer after the
+                first wash — no extra platform fee.
+              </div>
+            </div>
+          </div>
+          <div class="card" style="padding: 24px; background: var(--bg-sunk)">
+            <div
+              style="
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 0.05em;
+                color: var(--ink-faint);
+              "
+            >
+              ADD-ONS
+            </div>
+            <ul class="addon-list">
+              <li><span>Interior vacuum + mats</span><b>+₹50</b></li>
+              <li><span>Dashboard polish &amp; dressing</span><b>+₹40</b></li>
+              <li><span>Tyre black + glass clean</span><b>+₹30</b></li>
+              <li><span>Full body foam + wax</span><b>+₹80</b></li>
+            </ul>
+            <div
+              class="card"
+              style="
+                margin-top: 20px;
+                padding: 14px;
+                display: flex;
+                gap: 10px;
+                background: var(--bg-alt);
+              "
+            >
+              <span
+                data-icon="clock"
+                class="icon"
+                style="flex-shrink: 0; color: var(--primary)"
+              ></span>
+              <div
+                style="
+                  font-size: 12px;
+                  color: var(--ink-soft);
+                  line-height: 1.6;
+                "
+              >
+                <b style="color: var(--ink)">Pune timing:</b> 7 AM – 7 PM,
+                same-day slot if booked before 3 PM.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <style>
+        @media (min-width: 840px) {
+          .pricing-grid {
+            grid-template-columns: 1.2fr 0.8fr;
+          }
+        }
+      </style>
+    </section>
+
+    <!-- ================= BOOKING ================= -->
+    <section id="booking" class="booking-section">
+      <div class="wrap booking-grid">
+        <div>
+          <span class="badge">Booking</span>
+          <h2>
+            Send car photos,<br /><span style="color: var(--ink-faint)"
+              >get a quote in 2 hours.</span
+            >
+          </h2>
+          <p class="sub">
+            Skip the trip to a service center. Fixed price, verified washers
+            from your own area.
+          </p>
+          <div class="booking-perks">
+            <div style="display: flex; align-items: center; gap: 10px">
+              <span class="p-dot"
+                ><span
+                  data-icon="check"
+                  class="icon"
+                  style="width: 12px; height: 12px"
+                ></span
+              ></span>
+              We come to you, at your parking slot
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px">
+              <span class="p-dot"
+                ><span
+                  data-icon="check"
+                  class="icon"
+                  style="width: 12px; height: 12px"
+                ></span
+              ></span>
+              Photo-based quote in 2 hours
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px">
+              <span class="p-dot"
+                ><span
+                  data-icon="check"
+                  class="icon"
+                  style="width: 12px; height: 12px"
+                ></span
+              ></span>
+              Pay after you check the work
+            </div>
+          </div>
+        </div>
+
+        <div class="booking-form-wrap" id="bookingCardWrap">
+          <form id="bookingForm" novalidate>
+            <!-- honeypot: real users never see or fill this -->
+            <div class="honey" aria-hidden="true">
+              <label for="website">Leave this empty</label>
+              <input
+                type="text"
+                id="website"
+                name="website"
+                tabindex="-1"
+                autocomplete="off"
+              />
+            </div>
+
+            <div class="form-grid-2">
+              <div>
+                <label class="field-label">Your Name *</label>
+                <input
+                  class="field"
+                  id="f-name"
+                  maxlength="50"
+                  placeholder="e.g. Amit Sharma"
+                />
+                <div class="err-text" id="err-name" style="display: none"></div>
+              </div>
+              <div>
+                <label class="field-label">Mobile (WhatsApp) *</label>
+                <input
+                  class="field"
+                  id="f-mobile"
+                  inputmode="numeric"
+                  maxlength="10"
+                  placeholder="9XXXXXXXXX"
+                />
+                <div
+                  class="err-text"
+                  id="err-mobile"
+                  style="display: none"
+                ></div>
+              </div>
+            </div>
+
+            <div class="form-grid-2" style="margin-top: 16px">
+              <div>
+                <label class="field-label">Area in Pune *</label>
+                <select class="field" id="f-area">
+                  <option value="">Select area</option>
+                  <!-- TODO: edit this list to match the societies/areas you actually serve -->
+                  <option>Baner</option>
+                  <option>Wakad</option>
+                  <option>Kothrud</option>
+                  <option>Hadapsar</option>
+                  <option>Kharadi</option>
+                  <option>Hinjewadi</option>
+                  <option>Viman Nagar</option>
+                  <option>Koregaon Park</option>
+                  <option>Aundh</option>
+                  <option>Pimple Saudagar</option>
+                  <option>Magarpatta</option>
+                  <option>Warje</option>
+                </select>
+                <div class="err-text" id="err-area" style="display: none"></div>
+              </div>
+              <div>
+                <label class="field-label">Car Type</label>
+                <select class="field" id="f-cartype">
+                  <option>Hatchback</option>
+                  <option>Sedan</option>
+                  <option>SUV</option>
+                  <option>Luxury / 7-seater</option>
+                </select>
+              </div>
+            </div>
+
+            <div style="margin-top: 16px">
+              <label class="field-label">Society / Parking Address *</label>
+              <input
+                class="field"
+                id="f-address"
+                maxlength="120"
+                placeholder="e.g. Mont Vert Seville, Baner — Parking P2-104"
+              />
+              <div
+                class="err-text"
+                id="err-address"
+                style="display: none"
+              ></div>
+            </div>
+
+            <div class="form-grid-2" style="margin-top: 16px">
+              <div>
+                <label class="field-label">Service Type</label>
+                <select class="field" id="f-service">
+                  <option>One-time Exterior + Interior</option>
+                  <option>Monthly 8 washes</option>
+                  <option>Only Exterior Foam</option>
+                  <option>Interior Deep Clean</option>
+                </select>
+              </div>
+              <div
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px"
+              >
+                <div>
+                  <label class="field-label">Date</label>
+                  <input class="field" type="date" id="f-date" />
+                </div>
+                <div>
+                  <label class="field-label">Time</label>
+                  <input class="field" type="time" id="f-time" />
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 16px">
+              <label class="field-label"
+                >Car Photos (max 3) — for an accurate quote</label
+              >
+              <div class="photo-strip" id="photoStrip" style="margin-top: 6px">
+                <label class="photo-add" id="photoAddBtn">
+                  <span
+                    data-icon="upload"
+                    class="icon"
+                    style="width: 16px; height: 16px"
+                  ></span>
+                  Add photo
+                  <input
+                    type="file"
+                    id="photoInput"
+                    accept="image/*"
+                    multiple
+                  />
+                </label>
+              </div>
+              <div class="err-text" id="err-photo" style="display: none"></div>
+            </div>
+
+            <div style="margin-top: 16px">
+              <label class="field-label">Notes (optional)</label>
+              <textarea
+                class="field"
+                id="f-notes"
+                rows="2"
+                maxlength="300"
+                placeholder="Any stains, pet hair, child seat etc"
+              ></textarea>
+              <div class="err-text" id="err-notes" style="display: none"></div>
+            </div>
+
+            <div class="consent-box" style="margin-top: 16px">
+              <label>
+                <input type="checkbox" id="f-consent" style="margin-top: 2px" />
+                <span
+                  ><b>I agree to share my photos for a quote *</b><br />
+                  <span style="color: var(--ink-faint); font-size: 11.5px"
+                    >We share your car photos and area only with verified
+                    washers near you.</span
+                  ></span
+                >
+              </label>
+              <div
+                class="err-text"
+                id="err-consent"
+                style="display: none"
+              ></div>
+            </div>
+
+            <div
+              id="formTopError"
+              class="err-text"
+              style="
+                display: none;
+                background: var(--danger-bg);
+                border: 1px solid var(--danger-border);
+                border-radius: 10px;
+                padding: 10px 12px;
+                margin-top: 16px;
+              "
+            ></div>
+
+            <button
+              type="submit"
+              id="submitBtn"
+              class="btn btn-primary"
+              style="width: 100%; margin-top: 18px"
+            >
+              Get Quote on WhatsApp <span data-icon="arrow" class="icon"></span>
+            </button>
+            <p
+              style="
+                text-align: center;
+                font-size: 11px;
+                color: var(--ink-faint);
+                margin-top: 12px;
+                line-height: 1.6;
+              "
+            >
+              By booking, you agree to our
+              <button
+                type="button"
+                data-modal="terms"
+                style="
+                  background: none;
+                  border: none;
+                  color: inherit;
+                  text-decoration: underline;
+                  font: inherit;
+                  padding: 0;
+                "
+              >
+                Terms
+              </button>
+              and
+              <button
+                type="button"
+                data-modal="privacy"
+                style="
+                  background: none;
+                  border: none;
+                  color: inherit;
+                  text-decoration: underline;
+                  font: inherit;
+                  padding: 0;
+                "
+              >
+                Privacy Policy</button
+              >.
+            </p>
+          </form>
+
+          <!-- success state, hidden until a submission succeeds -->
+          <div
+            id="successState"
+            style="display: none; text-align: center; padding: 12px 0"
+          >
+            <div class="success-icon">
+              <span
+                data-icon="check"
+                class="icon"
+                style="width: 26px; height: 26px"
+              ></span>
+            </div>
+            <h3 style="margin-top: 18px; font-size: 20px">Request received!</h3>
+            <p
+              id="successMsg"
+              style="
+                margin-top: 8px;
+                font-size: 13.5px;
+                color: var(--ink-soft);
+                max-width: 340px;
+                margin-left: auto;
+                margin-right: auto;
+                line-height: 1.6;
+              "
+            ></p>
+            <div
+              id="submittedData"
+              class="submitted-data"
+              aria-live="polite"
+            ></div>
+            <div
+              class="card"
+              style="
+                text-align: left;
+                margin-top: 20px;
+                padding: 16px;
+                background: var(--bg-sunk);
+                border: none;
+              "
+            >
+              <b style="font-size: 13px">What happens next?</b>
+              <ul
+                style="
+                  margin: 10px 0 0;
+                  padding-left: 18px;
+                  font-size: 12.5px;
+                  color: var(--ink-soft);
+                  line-height: 1.7;
+                "
+              >
+                <li>We check with verified washers near your society</li>
+                <li>
+                  Best fixed quote comes on WhatsApp — reply YES to confirm
+                </li>
+                <li>
+                  Washer arrives at your parking during your preferred slot
+                </li>
+                <li>Pay after you check the work</li>
+              </ul>
+            </div>
+            <div
+              style="
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+              "
+            >
+              <a
+                id="successWaBtn"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-wa"
+                style="width: 100%"
+                ><span data-icon="chat" class="icon"></span> Send details on
+                WhatsApp</a
+              >
+              <button
+                id="bookAnotherBtn"
+                class="btn btn-ghost"
+                style="width: 100%"
+              >
+                Book another
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOUNDER STORY ================= -->
+    <section id="story">
+      <div class="wrap">
+        <div class="card founder-grid">
+          <div class="founder-photo-col">
+            <div class="founder-photo">
+              <img
+                src="ass/InstagramProfileImage.png"
+                alt="Pruthviraj Chavan, founder of WashAtComfort"
+              />
+              <div class="founder-badge">
+                <div style="font-size: 12px; font-weight: 700">
+                  MCA Student, Pune
+                </div>
+                <div style="font-size: 11px; color: var(--ink-soft)">
+                  <!-- TODO: e.g. "4 years hands-on car-wash experience" -->
+                  Years of hands-on car-wash experience
+                </div>
+              </div>
+            </div>
+            <div class="social-row">
+              <a
+                class="social-btn"
+                href="https://www.linkedin.com/in/pruthviraj-chavan-294342310/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                ><span
+                  data-icon="linkedin"
+                  class="icon"
+                  style="width: 16px; height: 16px"
+                ></span
+              ></a>
+              <a
+                class="social-btn"
+                href="https://www.instagram.com/solofounder_/reels/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+                ><span
+                  data-icon="instagram"
+                  class="icon"
+                  style="width: 16px; height: 16px"
+                ></span
+              ></a>
+            </div>
+          </div>
+          <div class="founder-copy">
+            <span class="badge">Our Story</span>
+            <h2 style="font-size: 24px; margin-top: 14px; line-height: 1.15">
+              Built by someone who's washed cars in Pune societies for years.
+            </h2>
+            <!-- TODO: replace this paragraph with your own real story, in your own words -->
+            <p>
+              I've spent years washing cars in Pune societies to manage expenses
+              alongside my studies. I learned what Pune families actually want —
+              a trusted washer who shows up on time, at their own parking spot.
+            </p>
+            <p>
+              WashAtComfort brings that same trust online. You send car photos,
+              we get you a fixed quote from a verified local washer in your area
+              — no need to visit a service center, and you pay only after you've
+              checked the work.
+            </p>
+            <div
+              style="
+                margin-top: 24px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 12px;
+              "
+            >
+              <a
+                id="storyWaBtn"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+                ><span data-icon="phone" class="icon"></span> Book Your Wash</a
+              >
+              <button data-nav="pricing" class="btn btn-ghost">
+                See Pricing
+                <span
+                  data-icon="arrow"
+                  class="icon"
+                  style="width: 14px; height: 14px"
+                ></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HONEST "NEW BUSINESS" NOTICE (replaces fabricated reviews) ================= -->
+    <section
+      style="
+        background: var(--bg-sunk);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+      "
+    >
+      <div class="wrap">
+        <div class="card notice-card">
+          <h3 style="font-size: 19px">We're just getting started in Pune</h3>
+          <p
+            style="
+              margin-top: 10px;
+              font-size: 13.5px;
+              color: var(--ink-soft);
+              max-width: 480px;
+              margin-left: auto;
+              margin-right: auto;
+              line-height: 1.6;
+            "
+          >
+            WashAtComfort is a new, student-run service — we'd rather tell you
+            that honestly than invent reviews. Book a wash and, if you're happy
+            with it, we'll ask if we can feature your feedback here.
+          </p>
+          <!--
+        Once you have real customer feedback, you can replace this whole
+        section with something like the block below — just make sure every
+        quote and name is a real customer who agreed to be featured.
+
+        <div class="grid-3">
+          <div class="card" style="padding:24px">
+            <p style="font-size:13.5px; line-height:1.6">"Quote in the message, exactly."</p>
+            <div style="margin-top:16px; font-size:12.5px; color:var(--ink-soft)">— Real Name, Real Area</div>
+          </div>
+        </div>
+      -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="contact">
+      <div class="wrap footer-grid">
+        <div>
+          <div class="brand" style="font-size: 15px">
+            <span
+              class="brand-mark"
+              style="width: 28px; height: 28px; font-size: 13px"
+              >W</span
+            >
+            <span>WashAtComfort</span>
+            <span class="brand-tag">MADE IN PUNE</span>
+          </div>
+          <p
+            style="
+              margin-top: 14px;
+              font-size: 13px;
+              color: var(--ink-soft);
+              max-width: 360px;
+              line-height: 1.6;
+            "
+          >
+            Car wash at your own parking in Pune. Skip the trip to a service
+            center — we come to you, and you pay after the work is done.
+          </p>
+          <div
+            style="margin-top: 18px; display: flex; gap: 8px; flex-wrap: wrap"
+          >
+            <a
+              id="footerWaBtn"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-ghost"
+              style="height: 34px; padding: 0 14px; font-size: 12px"
+              ><span
+                data-icon="chat"
+                class="icon"
+                style="width: 13px; height: 13px"
+              ></span>
+              WhatsApp</a
+            >
+            <span
+              class="btn btn-ghost"
+              style="
+                height: 34px;
+                padding: 0 14px;
+                font-size: 12px;
+                pointer-events: none;
+              "
+              ><span
+                data-icon="pin"
+                class="icon"
+                style="width: 13px; height: 13px"
+              ></span>
+              Pune Only • 7AM–7PM</span
+            >
+          </div>
+          <div
+            class="card"
+            style="
+              margin-top: 20px;
+              padding: 12px;
+              max-width: 380px;
+              background: var(--bg-sunk);
+              border: 1px solid var(--border);
+            "
+          >
+            <div
+              style="
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 0.05em;
+                color: var(--ink-faint);
+                display: flex;
+                align-items: center;
+                gap: 6px;
+              "
+            >
+              <span
+                data-icon="mail"
+                class="icon"
+                style="width: 12px; height: 12px"
+              ></span>
+              CONTACT
+            </div>
+            <!-- TODO: confirm this inbox actually exists and that you check it -->
+            <div
+              style="margin-top: 6px; font-size: 12.5px; color: var(--ink-soft)"
+            >
+              Email:
+              <a
+                href="mailto:support@washatcomfort.com"
+                style="
+                  font-weight: 600;
+                  color: var(--ink);
+                  text-decoration: underline;
+                "
+                >support@washatcomfort.com</a
+              >
+            </div>
+            <div
+              style="margin-top: 2px; font-size: 12.5px; color: var(--ink-soft)"
+            >
+              Areas: Baner, Wakad, Kothrud, Hadapsar, Kharadi &amp; more
+            </div>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>QUICK LINKS</h4>
+          <ul>
+            <li><button data-nav="how">How it Works</button></li>
+            <li><button data-nav="pricing">Services &amp; Pricing</button></li>
+            <li><button data-nav="booking">Book Wash</button></li>
+            <li><button data-nav="story">Our Story</button></li>
+          </ul>
+          <h4 style="margin-top: 22px">LEGAL</h4>
+          <ul>
+            <li><button data-modal="terms">Terms &amp; Conditions</button></li>
+            <li><button data-modal="privacy">Privacy Policy</button></li>
+            <li>
+              <button data-modal="disclaimer">
+                Disclaimer &amp; Copyright
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>WHY WASHATCOMFORT?</h4>
+          <div
+            class="card"
+            style="
+              margin-top: 14px;
+              padding: 14px;
+              background: var(--bg-sunk);
+              border: 1px solid var(--border);
+            "
+          >
+            <div
+              style="
+                font-size: 12.5px;
+                font-weight: 600;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+              "
+            >
+              <span
+                data-icon="badge"
+                class="icon"
+                style="width: 14px; height: 14px; color: var(--primary)"
+              ></span>
+              Student-run, made for societies
+            </div>
+            <div
+              style="
+                margin-top: 8px;
+                font-size: 11.5px;
+                color: var(--ink-soft);
+                line-height: 1.6;
+              "
+            >
+              We connect you with verified local washers from your own area.
+              Fixed quote, pay after you check the work.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap footer-bottom">
+        <div class="footer-links">
+          <button data-modal="terms">Terms &amp; Conditions</button
+          ><span>·</span> <button data-modal="privacy">Privacy Policy</button
+          ><span>·</span> <button data-modal="disclaimer">Disclaimer</button
+          ><span>·</span>
+          <button data-nav="contact">Contact</button>
+        </div>
+        <div>
+          © <span id="yearNow"></span> WashAtComfort. Built by a student in
+          Pune. Pune jurisdiction only.
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================= LEGAL MODAL ================= -->
+    <div class="modal-backdrop" id="modalBackdrop">
+      <div class="modal">
+        <div class="modal-head">
+          <div>
+            <div
+              id="modalKicker"
+              style="
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: 0.05em;
+                color: var(--ink-faint);
+              "
+            ></div>
+            <h3 id="modalTitle" style="font-size: 18px; margin-top: 4px"></h3>
+          </div>
+          <button id="modalClose" class="icon-btn" aria-label="Close">
+            <span data-icon="close" class="icon"></span>
+          </button>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+        <div class="modal-foot">
+          <button class="btn btn-primary" id="modalOk">I Understand</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
