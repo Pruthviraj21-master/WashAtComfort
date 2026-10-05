@@ -199,3 +199,133 @@
 
   .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
   @media (prefers-reduced-motion: reduce){ *{animation:none!important; transition:none!important} }
+
+  /* ============================================================
+     DARK THEME — the header toggle sets data-theme on <html>
+     ============================================================ */
+  [data-theme="dark"]{
+    --bg:#121519; --bg-alt:#1B2027; --bg-sunk:#0D1013;
+    --ink:#EDF1F5; --ink-soft:#A8B1BC; --ink-faint:#6D757F;
+    --border:#2A313A;
+    --primary:#6B93E0; --primary-hover:#8AA9E8; --primary-ink:#0B1220;
+    --accent:#F2B705; --accent-ink:#14181C;
+    --success-bg:#12261B; --success:#4CC38A; --success-border:#1E3A2A;
+    --danger-bg:#2C1512; --danger:#F0928C; --danger-border:#3E201B;
+    --info-bg:#16233C; --info:#93B4EC; --info-border:#24365A;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
+    --shadow-lg:0 24px 60px rgba(0,0,0,.55);
+  }
+
+  /* ============================================================
+     SCROLL-REVEAL — IntersectionObserver adds .revealed
+     (only when JS runs, via the .js class on <html>)
+     ============================================================ */
+  html.js [data-reveal]{opacity:0; transform:translateY(24px);
+    transition:opacity .7s cubic-bezier(.22,.61,.36,1) var(--d,0s),
+               transform .7s cubic-bezier(.22,.61,.36,1) var(--d,0s)}
+  html.js [data-reveal].revealed{opacity:1; transform:none}
+
+  /* ============================================================
+     HEADER — shadow on scroll + animated underline nav
+     ============================================================ */
+  header{transition:box-shadow .25s ease}
+  header.scrolled{box-shadow:0 6px 24px rgba(20,24,28,.10)}
+  nav.links button{position:relative; transition:color .2s ease}
+  nav.links button::after{content:""; position:absolute; left:0; bottom:-6px; height:2px; width:0;
+    background:var(--primary); border-radius:2px; transition:width .25s ease}
+  nav.links button:hover::after, nav.links button.active::after{width:100%}
+  .mobile-panel{animation:slideDown .28s ease}
+  @keyframes slideDown{from{opacity:0; transform:translateY(-8px)}to{opacity:1; transform:none}}
+
+  /* ============================================================
+     MICRO-INTERACTIONS — card lift, stat hover, button shine
+     ============================================================ */
+  @media(hover:hover){
+    .step-card{transition:transform .25s ease, box-shadow .25s ease}
+    .step-card:hover{transform:translateY(-4px); box-shadow:var(--shadow-lg)}
+    .stat{transition:transform .2s ease}
+    .stat:hover{transform:translateY(-3px)}
+  }
+  .btn-primary{position:relative; overflow:hidden}
+  .btn-primary::after{content:""; position:absolute; top:0; left:-70%; width:45%; height:100%;
+    background:linear-gradient(100deg, transparent, rgba(255,255,255,.35), transparent);
+    transform:skewX(-20deg); transition:left .6s ease}
+  .btn-primary:hover::after{left:140%}
+  ::selection{background:var(--primary); color:var(--primary-ink)}
+  :focus-visible{outline:2px solid var(--primary); outline-offset:2px; border-radius:6px}
+  section[id], footer[id]{scroll-margin-top:84px}
+
+  /* ============================================================
+     HERO — ambient gradient blobs + floating card
+     ============================================================ */
+  .hero{position:relative; overflow:hidden}
+  .blob{position:absolute; border-radius:50%; filter:blur(70px); pointer-events:none; z-index:0}
+  .blob-1{width:420px; height:420px; top:-130px; right:-90px; opacity:.30;
+    background:radial-gradient(circle, var(--accent), transparent 65%);
+    animation:drift 14s ease-in-out infinite alternate}
+  .blob-2{width:360px; height:360px; bottom:-150px; left:-110px; opacity:.20;
+    background:radial-gradient(circle, var(--primary), transparent 65%);
+    animation:drift 18s ease-in-out infinite alternate-reverse}
+  .hero .wrap{position:relative; z-index:1}
+  @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(30px,22px) scale(1.08)}}
+  .float-card{animation:floaty 5s ease-in-out infinite}
+  @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+  /* ============================================================
+     RESPONSIVE — tighter padding, stacked price table, full-width CTAs
+     ============================================================ */
+  @media(max-width:640px){
+    .wrap{padding:0 16px}
+    .hero{padding:44px 0 48px}
+    .hero-ctas .btn{width:100%}
+    .stat-grid{gap:8px}
+    .stat{padding:12px 10px}
+    .float-card{position:static; left:auto; right:auto; max-width:none; margin-top:18px}
+    /* pricing table → stacked cards */
+    table.price-table{min-width:0 !important}
+    table.price-table, table.price-table thead, table.price-table tbody,
+    table.price-table tr, table.price-table td{display:block}
+    table.price-table thead{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0)}
+    table.price-table tr{border:1px solid var(--border); border-radius:14px; margin:0 0 14px;
+      overflow:hidden; background:var(--bg-alt)}
+    table.price-table td{display:flex; justify-content:space-between; align-items:center; gap:12px;
+      padding:12px 16px; border-top:1px solid var(--border); text-align:right}
+    table.price-table td::before{content:attr(data-label); font-size:12px; font-weight:600;
+      color:var(--ink-soft); text-align:left}
+    table.price-table td:first-child{display:block; text-align:left; background:var(--bg-sunk);
+      border-top:none; font-weight:600}
+    table.price-table td:first-child::before{content:none}
+  }
+  @media(max-width:420px){ .hero h1{font-size:29px} }
+
+  /* ============================================================
+     FAQ ACCORDION
+     ============================================================ */
+  .faq-list{display:grid; gap:12px; margin-top:32px; max-width:760px}
+  .faq-item{border:1px solid var(--border); border-radius:16px; background:var(--bg-alt);
+    overflow:hidden; transition:border-color .2s ease, box-shadow .2s ease}
+  .faq-item.open{border-color:var(--primary); box-shadow:var(--shadow)}
+  .faq-q{width:100%; display:flex; justify-content:space-between; align-items:center; gap:16px;
+    background:none; border:none; text-align:left; font:inherit; font-weight:600; font-size:15px;
+    padding:18px 20px; color:var(--ink)}
+  .faq-ic{width:28px; height:28px; border-radius:999px; background:var(--bg-sunk); display:grid;
+    place-items:center; flex-shrink:0; transition:transform .3s ease, background .3s ease, color .3s ease}
+  .faq-item.open .faq-ic{transform:rotate(45deg); background:var(--primary); color:var(--primary-ink)}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .35s ease}
+  .faq-a p{padding:0 20px 18px; font-size:13.5px; color:var(--ink-soft); line-height:1.7}
+
+  /* ============================================================
+     FLOATING WHATSAPP + BACK TO TOP
+     ============================================================ */
+  .wa-fab{position:fixed; right:20px; bottom:20px; width:56px; height:56px; border-radius:999px;
+    background:#25D366; color:#06210F; display:grid; place-items:center; z-index:60;
+    box-shadow:0 8px 24px rgba(37,211,102,.45); transition:transform .2s ease}
+  .wa-fab:hover{transform:scale(1.08)}
+  .wa-fab::before{content:""; position:absolute; inset:0; border-radius:999px; background:#25D366;
+    animation:pulse 2.2s ease-out infinite; z-index:-1}
+  @keyframes pulse{0%{transform:scale(1); opacity:.5}80%,100%{transform:scale(1.7); opacity:0}}
+  .to-top{position:fixed; right:20px; bottom:88px; width:44px; height:44px; border-radius:999px;
+    background:var(--ink); color:var(--bg); border:none; display:grid; place-items:center; cursor:pointer;
+    opacity:0; pointer-events:none; transform:translateY(10px); z-index:59;
+    box-shadow:var(--shadow-lg); transition:opacity .25s ease, transform .25s ease}
+  .to-top.show{opacity:1; pointer-events:auto; transform:none}

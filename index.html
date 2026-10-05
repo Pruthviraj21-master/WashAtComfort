@@ -27,7 +27,6 @@
             alt="WashAtComfort"
             style="height: 40px"
           />
-          <span>WashAtComfort</span>
           <span class="brand-tag hide-mobile">PUNE</span>
         </div>
         <nav class="links">
@@ -40,9 +39,15 @@
             Book Wash
           </button>
           <button
+            id="themeToggle"
+            class="icon-btn"
+            aria-label="Toggle dark mode"
+          ></button>
+          <button
             id="menuToggle"
             class="icon-btn hide-desktop"
             aria-label="Menu"
+            aria-expanded="false"
           ></button>
         </div>
       </div>
@@ -76,8 +81,10 @@
 
     <!-- ================= HERO ================= -->
     <section class="hero">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
       <div class="wrap hero-grid">
-        <div>
+        <div data-reveal>
           <span class="badge"
             ><span
               style="
@@ -114,15 +121,15 @@
         even before you have customers. Edit freely, just keep them truthful.
       -->
           <div class="stat-grid">
-            <div class="stat"><b>2 Hrs</b><span>QUOTE TURNAROUND</span></div>
-            <div class="stat"><b>&lt;15L</b><span>WATER PER WASH</span></div>
+            <div class="stat"><b data-count="2" data-suffix=" Hrs">2 Hrs</b><span>QUOTE TURNAROUND</span></div>
+            <div class="stat"><b data-count="15" data-prefix="&lt;" data-suffix="L">&lt;15L</b><span>WATER PER WASH</span></div>
             <div class="stat">
-              <b>100%</b><span>PHOTO-VERIFIED QUOTES</span>
+              <b data-count="100" data-suffix="%">100%</b><span>PHOTO-VERIFIED QUOTES</span>
             </div>
           </div>
         </div>
 
-        <div style="position: relative">
+        <div data-reveal style="position:relative; --d:.15s">
           <div class="hero-card">
             <div
               style="
@@ -295,14 +302,14 @@
       "
     >
       <div class="wrap">
-        <div class="section-head">
+        <div class="section-head" data-reveal>
           <h2>How it works — 3 steps</h2>
           <p style="max-width: 300px; font-size: 13px; color: var(--ink-soft)">
             No app to download. Just WhatsApp and a short form.
           </p>
         </div>
         <div class="grid-3">
-          <div class="card step-card">
+          <div class="card step-card" data-reveal>
             <div
               style="
                 display: flex;
@@ -328,7 +335,7 @@
               about a minute.
             </p>
           </div>
-          <div class="card step-card">
+          <div class="card step-card" data-reveal style="--d:.1s">
             <div
               style="
                 display: flex;
@@ -354,7 +361,7 @@
               best fixed quote on WhatsApp.
             </p>
           </div>
-          <div class="card step-card">
+          <div class="card step-card" data-reveal style="--d:.2s">
             <div
               style="
                 display: flex;
@@ -387,7 +394,7 @@
     <!-- ================= PRICING ================= -->
     <section id="pricing">
       <div class="wrap">
-        <div style="display: flex; align-items: center; gap: 10px">
+        <div data-reveal style="display: flex; align-items: center; gap: 10px">
           <div
             style="
               width: 32px;
@@ -423,7 +430,7 @@
           style="margin-top: 28px; display: grid; gap: 22px"
           class="pricing-grid"
         >
-          <div class="card" style="overflow: hidden">
+          <div class="card" data-reveal style="overflow: hidden">
             <div style="overflow-x: auto">
               <table class="price-table" style="min-width: 520px">
                 <thead>
@@ -435,19 +442,19 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td>Hatchback — Exterior + Interior + Vacuum</td>
-                    <td>₹300–350</td>
-                    <td>₹900–1100</td>
+                    <td data-label="Service">Hatchback — Exterior + Interior + Vacuum</td>
+                    <td data-label="One-time">₹300–350</td>
+                    <td data-label="Monthly (8×)">₹900–1100</td>
                   </tr>
                   <tr>
-                    <td>Sedan — Full wash + dashboard + tyre</td>
-                    <td>₹350–450</td>
-                    <td>₹1000–1200</td>
+                    <td data-label="Service">Sedan — Full wash + dashboard + tyre</td>
+                    <td data-label="One-time">₹350–450</td>
+                    <td data-label="Monthly (8×)">₹1000–1200</td>
                   </tr>
                   <tr>
-                    <td>SUV / 7-seater — Foam + interior detail</td>
-                    <td>₹450–550</td>
-                    <td>₹1100–1300</td>
+                    <td data-label="Service">SUV / 7-seater — Foam + interior detail</td>
+                    <td data-label="One-time">₹450–550</td>
+                    <td data-label="Monthly (8×)">₹1100–1300</td>
                   </tr>
                 </tbody>
               </table>
@@ -462,7 +469,7 @@
               </div>
             </div>
           </div>
-          <div class="card" style="padding: 24px; background: var(--bg-sunk)">
+          <div class="card" data-reveal style="padding: 24px; background: var(--bg-sunk); --d:.1s">
             <div
               style="
                 font-size: 11px;
@@ -520,7 +527,7 @@
     <!-- ================= BOOKING ================= -->
     <section id="booking" class="booking-section">
       <div class="wrap booking-grid">
-        <div>
+        <div data-reveal>
           <span class="badge">Booking</span>
           <h2>
             Send car photos,<br /><span style="color: var(--ink-faint)"
@@ -565,7 +572,7 @@
           </div>
         </div>
 
-        <div class="booking-form-wrap" id="bookingCardWrap">
+        <div class="booking-form-wrap" id="bookingCardWrap" data-reveal style="--d:.15s">
           <form id="bookingForm" novalidate>
             <!-- honeypot: real users never see or fill this -->
             <div class="honey" aria-hidden="true">
@@ -888,7 +895,7 @@
     <!-- ================= FOUNDER STORY ================= -->
     <section id="story">
       <div class="wrap">
-        <div class="card founder-grid">
+        <div class="card founder-grid" data-reveal>
           <div class="founder-photo-col">
             <div class="founder-photo">
               <img
@@ -988,7 +995,7 @@
       "
     >
       <div class="wrap">
-        <div class="card notice-card">
+        <div class="card notice-card" data-reveal>
           <h3 style="font-size: 19px">We're just getting started in Pune</h3>
           <p
             style="
@@ -1030,8 +1037,9 @@
         padding: 40px 20px;
       "
     >
-      <h3 style="font-size: 19px">Are you a car washer?</h3>
+      <h3 style="font-size: 19px" data-reveal>Are you a car washer?</h3>
       <p
+        data-reveal
         style="
           margin-top: 8px;
           font-size: 13.5px;
@@ -1040,20 +1048,81 @@
           margin-left: auto;
           margin-right: auto;
           line-height: 1.6;
+          --d:.05s;
         "
       >
         Join our network and get more customers near your own area. Just tap
         below and send us a message.
       </p>
       <a
+        data-reveal
         href="https://wa.me/917499817978?text=Hi%2C%20I%20want%20to%20join%20WashAtComfort%20as%20a%20car%20washer"
         target="_blank"
         rel="noopener noreferrer"
         class="btn btn-wa"
-        style="margin-top: 18px"
+        style="margin-top: 18px; --d:.1s"
       >
         Join Us on WhatsApp
       </a>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-head" data-reveal>
+          <h2>Questions, answered</h2>
+          <p style="max-width: 340px; font-size: 13px; color: var(--ink-soft)">
+            The things people usually ask before booking their first wash.
+          </p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item" data-reveal>
+            <button class="faq-q" aria-expanded="false">
+              How does the photo-based quote work?
+              <span class="faq-ic"><span data-icon="plus" class="icon" style="width: 14px; height: 14px"></span></span>
+            </button>
+            <div class="faq-a">
+              <p>Send up to 3 clear photos of your car — exterior, plus any interior areas you want cleaned. Within 2 hours we WhatsApp you a fixed, all-inclusive price. No surprise charges after the wash.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-reveal style="--d:.05s">
+            <button class="faq-q" aria-expanded="false">
+              Is my car safe at my society parking?
+              <span class="faq-ic"><span data-icon="plus" class="icon" style="width: 14px; height: 14px"></span></span>
+            </button>
+            <div class="faq-a">
+              <p>Yes. You get a verified local washer from your own area, the wash happens right at your parking slot, and you can be present if you like. You check the work before you pay — and you're always welcome to share feedback afterwards.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-reveal style="--d:.1s">
+            <button class="faq-q" aria-expanded="false">
+              Which areas of Pune do you cover?
+              <span class="faq-ic"><span data-icon="plus" class="icon" style="width: 14px; height: 14px"></span></span>
+            </button>
+            <div class="faq-a">
+              <p>We currently cover Baner, Wakad, Kothrud, Hadapsar, Kharadi, Hinjewadi, Viman Nagar, Aundh, Pimple Saudagar, Magarpatta and Warje — with more areas added as our washer network grows. If you're unsure, just ask us on WhatsApp.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-reveal style="--d:.15s">
+            <button class="faq-q" aria-expanded="false">
+              How do I pay?
+              <span class="faq-ic"><span data-icon="plus" class="icon" style="width: 14px; height: 14px"></span></span>
+            </button>
+            <div class="faq-a">
+              <p>By UPI or cash, paid directly to the washer after you've checked the work. We never collect payment on this website — the quote you get on WhatsApp is the price you pay.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-reveal style="--d:.2s">
+            <button class="faq-q" aria-expanded="false">
+              Can I reschedule or cancel my booking?
+              <span class="faq-ic"><span data-icon="plus" class="icon" style="width: 14px; height: 14px"></span></span>
+            </button>
+            <div class="faq-a">
+              <p>Of course — free of charge up to 2 hours before your slot. Just message us on WhatsApp with your booking details and we'll move it to a time that suits you.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ================= FOOTER ================= -->
@@ -1061,11 +1130,11 @@
       <div class="wrap footer-grid">
         <div>
           <div class="brand" style="font-size: 15px">
-            <span
-              class="brand-mark"
-              style="width: 28px; height: 28px; font-size: 13px"
-              >W</span
-            >
+            <img
+              src="washatcomfort-icon.svg"
+              alt="WashAtComfort"
+              style="width: 28px; height: 28px; border-radius: 8px"
+            />
             <span>WashAtComfort</span>
             <span class="brand-tag">MADE IN PUNE</span>
           </div>
@@ -1171,6 +1240,7 @@
             <li><button data-nav="pricing">Services &amp; Pricing</button></li>
             <li><button data-nav="booking">Book Wash</button></li>
             <li><button data-nav="story">Our Story</button></li>
+            <li><button data-nav="faq">FAQ</button></li>
           </ul>
           <h4 style="margin-top: 22px">LEGAL</h4>
           <ul>
@@ -1265,6 +1335,18 @@
         </div>
       </div>
     </div>
+    <a
+      id="waFab"
+      href="#"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="wa-fab"
+      aria-label="Chat with us on WhatsApp"
+      ><span data-icon="chat" class="icon" style="width: 26px; height: 26px"></span
+    ></a>
+    <button id="toTop" class="to-top" aria-label="Back to top">
+      <span data-icon="arrow-up" class="icon"></span>
+    </button>
     <script src="script.js"></script>
   </body>
 </html>

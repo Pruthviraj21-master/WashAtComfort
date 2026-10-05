@@ -1,6 +1,9 @@
 /* =========================================================================
    MANUAL SETUP — search for "TODO" for every spot you still need to edit.
    ========================================================================= */
+
+/* Mark the document so scroll-reveal styles only apply when JS is running */
+document.documentElement.classList.add("js");
 const CONFIG = {
   GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbwbpd96Qth9A-Ua9YAnMegtSKeVW8jG7GQZVcdxgYmjzKeAVhd3ZgjCbgGJ9upGrkev9A/exec",
   WHATSAPP_NUMBER: "917499817978",
@@ -46,6 +49,8 @@ const ICONS = {
   alert:
     '<circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/>',
   close: '<path d="M18 6 6 18"/><path d="m6 6 12 12"/>',
+  plus: '<path d="M12 5v14"/><path d="M5 12h14"/>',
+  "arrow-up": '<path d="M12 19V5"/><path d="m5 12 7-7 7 7"/>',
   menu: '<line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>',
   sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
   moon: '<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>',
@@ -92,6 +97,7 @@ let menuOpen = false;
 menuToggle.addEventListener("click", () => {
   menuOpen = !menuOpen;
   mobilePanel.style.display = menuOpen ? "flex" : "none";
+  menuToggle.setAttribute("aria-expanded", String(menuOpen));
   menuToggle.innerHTML = `<span data-icon="${menuOpen ? "close" : "menu"}" class="icon"></span>`;
   renderIcons();
 });
@@ -103,6 +109,7 @@ document.querySelectorAll("[data-nav]").forEach((btn) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     menuOpen = false;
     mobilePanel.style.display = "none";
+    menuToggle.setAttribute("aria-expanded", "false");
     menuToggle.innerHTML = `<span data-icon="menu" class="icon"></span>`;
     renderIcons();
   });
@@ -497,3 +504,101 @@ document.getElementById("bookAnotherBtn").addEventListener("click", () => {
 
 document.getElementById("yearNow").textContent = new Date().getFullYear();
 renderIcons();
+
+/* ---------------- scroll UX: header shadow + back-to-top ---------------- */
+const headerEl = document.querySelector("header");
+const toTopBtn = document.getElementById("toTop");
+function onScroll() {
+  headerEl.classList.toggle("scrolled", window.scrollY > 8);
+  toTopBtn.classList.toggle("show", window.scrollY > 600);
+}
+window.addEventListener("scroll", onScroll, { passive: true });
+onScroll();
+toTopBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+/* ---------------- scroll-reveal animations (IntersectionObserver) ---------------- */
+const revealEls = document.querySelectorAll("[data-reveal]");
+if ("IntersectionObserver" in window) {
+  const revealIO = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("revealed");
+          revealIO.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+  );
+  revealEls.forEach((el) => revealIO.observe(el));
+} else {
+  revealEls.forEach((el) => el.classList.add("revealed"));
+}
+
+/* ---------------- count-up stats ---------------- */
+const counters = document.querySelectorAll("[data-count]");
+if ("IntersectionObserver" in window) {
+  const countIO = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        countIO.unobserve(el);
+        const target = parseFloat(el.dataset.count);
+        const prefix = el.dataset.prefix || "";
+        const suffix = el.dataset.suffix || "";
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          el.textContent = prefix + target + suffix;
+          return;
+        }
+        const duration = 1400;
+        const t0 = performance.now();
+        (function tick(now) {
+          const p = Math.min(1, (now - t0) / duration);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = prefix + Math.round(target * eased) + suffix;
+          if (p < 1) requestAnimationFrame(tick);
+        })(t0);
+      });
+    },
+    { threshold: 0.5 }
+  );
+  counters.forEach((el) => countIO.observe(el));
+}
+
+/* ---------------- active nav link highlighting ---------------- */
+const navSections = ["how", "pricing", "booking", "story", "faq"]
+  .map((id) => document.getElementById(id))
+  .filter(Boolean);
+const navBtns = document.querySelectorAll('nav.links button[data-nav]');
+if ("IntersectionObserver" in window && navSections.length && navBtns.length) {
+  const sectionIO = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        navBtns.forEach((b) => b.classList.toggle("active", b.dataset.nav === entry.target.id));
+      });
+    },
+    { rootMargin: "-40% 0px -55% 0px" }
+  );
+  navSections.forEach((s) => sectionIO.observe(s));
+}
+
+/* ---------------- FAQ accordion ---------------- */
+document.querySelectorAll(".faq-item").forEach((item) => {
+  const q = item.querySelector(".faq-q");
+  const a = item.querySelector(".faq-a");
+  if (!q || !a) return;
+  q.addEventListener("click", () => {
+    const open = item.classList.toggle("open");
+    q.setAttribute("aria-expanded", String(open));
+    a.style.maxHeight = open ? a.scrollHeight + "px" : "0px";
+  });
+});
+
+/* ---------------- misc UX ---------------- */
+const dateInput = document.getElementById("f-date");
+if (dateInput) dateInput.min = new Date().toISOString().split("T")[0];
+
+const waFab = document.getElementById("waFab");
+if (waFab) waFab.href = waLink("Hi WashAtComfort, I want a car wash quote");
