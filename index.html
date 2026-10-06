@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>WashAtComfort — Car Wash at Your Parking, Pune</title>
+    <title>WashAtComfort, Car Wash at Your Parking, Pune</title>
     <meta
       name="description"
       content="Send your car's photos, get a fixed quote in 2 hours, and get it washed at your own parking spot in Pune. Pay after you check the work."
@@ -94,7 +94,7 @@
                 background: var(--success);
               "
             ></span>
-            Live in Pune — Baner, Wakad, Kothrud &amp; more</span
+            Live in Pune, Baner, Wakad, Kothrud &amp; more</span
           >
           <h1>Car Wash at Your<br />Parking in Pune.</h1>
           <p class="sub">
@@ -117,7 +117,7 @@
           </div>
           <!--
         These 3 numbers describe policies you control (turnaround time, water
-        used, verification step) rather than review counts — safe to publish
+        used, verification step) rather than review counts, safe to publish
         even before you have customers. Edit freely, just keep them truthful.
       -->
           <div class="stat-grid">
@@ -303,7 +303,7 @@
     >
       <div class="wrap">
         <div class="section-head" data-reveal>
-          <h2>How it works — 3 steps</h2>
+          <h2>How it works, 3 steps</h2>
           <p style="max-width: 300px; font-size: 13px; color: var(--ink-soft)">
             No app to download. Just WhatsApp and a short form.
           </p>
@@ -437,24 +437,28 @@
                   <tr>
                     <th>Service</th>
                     <th>One-time</th>
-                    <th>Monthly (8×)</th>
+                    <th>Monthly (8�,)</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td data-label="Service">Hatchback — Exterior + Interior + Vacuum</td>
+                    <td data-label="Service">Hatchback, Exterior + Interior + Vacuum</td>
                     <td data-label="One-time">₹300–350</td>
-                    <td data-label="Monthly (8×)">₹900–1100</td>
+                    <td data-label="Monthly (8�,)">₹900–1100</td>
+                    <td data-label="Get Quote"><a class="row-quote" data-msg="Hi WashAtComfort, I want a quote for: Hatchback, Exterior + Interior + Vacuum" target="_blank" rel="noopener noreferrer">Get quote</a></td>
                   </tr>
                   <tr>
-                    <td data-label="Service">Sedan — Full wash + dashboard + tyre</td>
+                    <td data-label="Service">Sedan, Full wash + dashboard + tyre</td>
                     <td data-label="One-time">₹350–450</td>
-                    <td data-label="Monthly (8×)">₹1000–1200</td>
+                    <td data-label="Monthly (8�,)">₹1000–1200</td>
+                    <td data-label="Get Quote"><a class="row-quote" data-msg="Hi WashAtComfort, I want a quote for: Sedan, Full wash + dashboard + tyre" target="_blank" rel="noopener noreferrer">Get quote</a></td>
                   </tr>
                   <tr>
-                    <td data-label="Service">SUV / 7-seater — Foam + interior detail</td>
+                    <td data-label="Service">SUV / 7-seater, Foam + interior detail</td>
                     <td data-label="One-time">₹450–550</td>
-                    <td data-label="Monthly (8×)">₹1100–1300</td>
+                    <td data-label="Monthly (8�,)">₹1100–1300</td>
+                    <td data-label="Get Quote"><a class="row-quote" data-msg="Hi WashAtComfort, I want a quote for: SUV / 7-seater, Foam + interior detail" target="_blank" rel="noopener noreferrer">Get quote</a></td>
                   </tr>
                 </tbody>
               </table>
@@ -465,7 +469,7 @@
                   style="width: 15px; height: 15px; flex-shrink: 0"
                 ></span>
                 Monthly plans are arranged directly with your washer after the
-                first wash — no extra platform fee.
+                first wash, no extra platform fee.
               </div>
             </div>
           </div>
@@ -512,6 +516,33 @@
                 same-day slot if booked before 3 PM.
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- Monthly plan savings calculator -->
+        <div class="card calc-card" data-reveal style="--d:.15s">
+          <h3 style="font-size: 17px">Monthly plan vs one-time, what do you save?</h3>
+          <p style="font-size: 12.5px; color: var(--ink-soft); margin-top: 4px">
+            Estimates based on typical Pune rates. Final fixed quote after you send car photos.
+          </p>
+          <div style="margin-top: 16px">
+            <label class="field-label" for="calcWashes"
+              >Washes per month: <b id="calcWashesVal">8</b></label
+            >
+            <input
+              type="range"
+              id="calcWashes"
+              min="4"
+              max="24"
+              step="2"
+              value="8"
+              style="width: 100%; accent-color: var(--primary)"
+            />
+          </div>
+          <div class="calc-out">
+            <div><span>One-time total</span><b id="calcOnetime">₹2800</b></div>
+            <div><span>Monthly plan</span><b id="calcMonthly">₹1000</b></div>
+            <div class="calc-save"><span>You save</span><b id="calcSave">₹1800</b></div>
           </div>
         </div>
       </div>
@@ -568,6 +599,74 @@
                 ></span
               ></span>
               Pay after you check the work
+            </div>
+          </div>
+
+          <!-- ===== COVERAGE CHECKER ===== -->
+          <div class="washer-panel" data-reveal style="--d:.1s">
+            <h3 style="font-size: 17px">Do we come to your area?</h3>
+            <p style="font-size: 12px; color: var(--ink-faint); margin-top: 4px">
+              Type your area or society to check.
+            </p>
+            <div style="display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap">
+              <input class="field" id="areaCheck" placeholder="e.g. Pashan, Baner, Kothrud" style="flex: 1; min-width: 160px" />
+              <button class="btn btn-primary" id="areaCheckBtn" type="button">Check</button>
+            </div>
+            <div id="areaCheckResult" style="margin-top: 10px; font-size: 13px; display: none"></div>
+          </div>
+
+          <!-- ===== WASHER DIRECTORY (left column, fills empty space) ===== -->
+          <div class="washer-panel" data-reveal>
+            <h3 style="font-size: 17px">Book a washer directly</h3>
+            <p style="font-size: 12px; color: var(--ink-faint); margin-top: 4px">
+              Filter by area, then book on WhatsApp.
+            </p>
+            <div class="washer-layout">
+              <div class="washer-areas" id="washerAreas">
+                <div class="washer-areas-label">AREAS</div>
+                <button class="area-btn active" data-area="all">
+                  All areas <span class="count">1</span>
+                </button>
+                <button class="area-btn" data-area="Pashan">
+                  Pashan <span class="count">1</span>
+                </button>
+                <button class="area-btn" data-area="Baner">
+                  Baner <span class="count">0</span>
+                </button>
+                <button class="area-btn" data-area="Kothrud">
+                  Kothrud <span class="count">0</span>
+                </button>
+                <button class="area-btn" data-area="Wakad">
+                  Wakad <span class="count">0</span>
+                </button>
+                <button class="area-btn" data-area="Hadapsar">
+                  Hadapsar <span class="count">0</span>
+                </button>
+              </div>
+              <div class="washer-list" id="washerList">
+                <div class="washer-row" data-area="Pashan">
+                  <img
+                    src="ass/InstagramProfileImage.png"
+                    alt="Pruthviraj Chavan"
+                    class="washer-avatar"
+                  />
+                  <div class="washer-info">
+                    <b>Pruthviraj Chavan</b>
+                    <span>Founder · Pashan</span>
+                  </div>
+                  <a
+                    class="btn btn-wa washer-book"
+                    href="https://wa.me/917499817978?text=Hi%2C%20I%20want%20to%20book%20a%20car%20wash%20with%20Pruthviraj"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Book</a
+                  >
+                </div>
+                <p class="washer-empty" id="washerEmpty" style="display: none">
+                  No washers in this area yet, try another area or book via the
+                  form.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -652,7 +751,7 @@
                 class="field"
                 id="f-address"
                 maxlength="120"
-                placeholder="e.g. Mont Vert Seville, Baner — Parking P2-104"
+                placeholder="e.g. Mont Vert Seville, Baner, Parking P2-104"
               />
               <div
                 class="err-text"
@@ -671,9 +770,7 @@
                   <option>Interior Deep Clean</option>
                 </select>
               </div>
-              <div
-                style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px"
-              >
+              <div class="form-grid-2">
                 <div>
                   <label class="field-label">Date</label>
                   <input class="field" type="date" id="f-date" />
@@ -687,7 +784,7 @@
 
             <div style="margin-top: 16px">
               <label class="field-label"
-                >Car Photos (max 3) — for an accurate quote</label
+                >Car Photos (max 3), for an accurate quote</label
               >
               <div class="photo-strip" id="photoStrip" style="margin-top: 6px">
                 <label class="photo-add" id="photoAddBtn">
@@ -853,7 +950,7 @@
               >
                 <li>We check with verified washers near your society</li>
                 <li>
-                  Best fixed quote comes on WhatsApp — reply YES to confirm
+                  Best fixed quote comes on WhatsApp, reply YES to confirm
                 </li>
                 <li>
                   Washer arrives at your parking during your preferred slot
@@ -947,13 +1044,13 @@
             <!-- TODO: replace this paragraph with your own real story, in your own words -->
             <p>
               I've spent years washing cars in Pune societies to manage expenses
-              alongside my studies. I learned what Pune families actually want —
+              alongside my studies. I learned what Pune families actually want:
               a trusted washer who shows up on time, at their own parking spot.
             </p>
             <p>
               WashAtComfort brings that same trust online. You send car photos,
-              we get you a fixed quote from a verified local washer in your area
-              — no need to visit a service center, and you pay only after you've
+              we get you a fixed quote from a verified local washer in your area.
+              No need to visit a service center, and you pay only after you've
               checked the work.
             </p>
             <div
@@ -1008,19 +1105,19 @@
               line-height: 1.6;
             "
           >
-            WashAtComfort is a new, student-run service — we'd rather tell you
+            WashAtComfort is a new, student-run service, we'd rather tell you
             that honestly than invent reviews. Book a wash and, if you're happy
             with it, we'll ask if we can feature your feedback here.
           </p>
           <!--
         Once you have real customer feedback, you can replace this whole
-        section with something like the block below — just make sure every
+        section with something like the block below, just make sure every
         quote and name is a real customer who agreed to be featured.
 
         <div class="grid-3">
           <div class="card" style="padding:24px">
             <p style="font-size:13.5px; line-height:1.6">"Quote in the message, exactly."</p>
-            <div style="margin-top:16px; font-size:12.5px; color:var(--ink-soft)">— Real Name, Real Area</div>
+            <div style="margin-top:16px; font-size:12.5px; color:var(--ink-soft)">, Real Name, Real Area</div>
           </div>
         </div>
       -->
@@ -1082,7 +1179,7 @@
               <span class="faq-ic"><span data-icon="plus" class="icon" style="width: 14px; height: 14px"></span></span>
             </button>
             <div class="faq-a">
-              <p>Send up to 3 clear photos of your car — exterior, plus any interior areas you want cleaned. Within 2 hours we WhatsApp you a fixed, all-inclusive price. No surprise charges after the wash.</p>
+              <p>Send up to 3 clear photos of your car, exterior, plus any interior areas you want cleaned. Within 2 hours we WhatsApp you a fixed, all-inclusive price. No surprise charges after the wash.</p>
             </div>
           </div>
           <div class="faq-item" data-reveal style="--d:.05s">
@@ -1091,7 +1188,7 @@
               <span class="faq-ic"><span data-icon="plus" class="icon" style="width: 14px; height: 14px"></span></span>
             </button>
             <div class="faq-a">
-              <p>Yes. You get a verified local washer from your own area, the wash happens right at your parking slot, and you can be present if you like. You check the work before you pay — and you're always welcome to share feedback afterwards.</p>
+              <p>Yes. You get a verified local washer from your own area, the wash happens right at your parking slot, and you can be present if you like. You check the work before you pay, and you're always welcome to share feedback afterwards.</p>
             </div>
           </div>
           <div class="faq-item" data-reveal style="--d:.1s">
@@ -1100,7 +1197,7 @@
               <span class="faq-ic"><span data-icon="plus" class="icon" style="width: 14px; height: 14px"></span></span>
             </button>
             <div class="faq-a">
-              <p>We currently cover Baner, Wakad, Kothrud, Hadapsar, Kharadi, Hinjewadi, Viman Nagar, Aundh, Pimple Saudagar, Magarpatta and Warje — with more areas added as our washer network grows. If you're unsure, just ask us on WhatsApp.</p>
+              <p>We currently cover Baner, Wakad, Kothrud, Hadapsar, Kharadi, Hinjewadi, Viman Nagar, Aundh, Pimple Saudagar, Magarpatta and Warje, with more areas added as our washer network grows. If you're unsure, just ask us on WhatsApp.</p>
             </div>
           </div>
           <div class="faq-item" data-reveal style="--d:.15s">
@@ -1109,7 +1206,7 @@
               <span class="faq-ic"><span data-icon="plus" class="icon" style="width: 14px; height: 14px"></span></span>
             </button>
             <div class="faq-a">
-              <p>By UPI or cash, paid directly to the washer after you've checked the work. We never collect payment on this website — the quote you get on WhatsApp is the price you pay.</p>
+              <p>By UPI or cash, paid directly to the washer after you've checked the work. We never collect payment on this website, the quote you get on WhatsApp is the price you pay.</p>
             </div>
           </div>
           <div class="faq-item" data-reveal style="--d:.2s">
@@ -1118,7 +1215,7 @@
               <span class="faq-ic"><span data-icon="plus" class="icon" style="width: 14px; height: 14px"></span></span>
             </button>
             <div class="faq-a">
-              <p>Of course — free of charge up to 2 hours before your slot. Just message us on WhatsApp with your booking details and we'll move it to a time that suits you.</p>
+              <p>Of course, free of charge up to 2 hours before your slot. Just message us on WhatsApp with your booking details and we'll move it to a time that suits you.</p>
             </div>
           </div>
         </div>
@@ -1148,7 +1245,7 @@
             "
           >
             Car wash at your own parking in Pune. Skip the trip to a service
-            center — we come to you, and you pay after the work is done.
+            center, we come to you, and you pay after the work is done.
           </p>
           <div
             style="margin-top: 18px; display: flex; gap: 8px; flex-wrap: wrap"

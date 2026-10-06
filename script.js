@@ -1,5 +1,5 @@
 /* =========================================================================
-   MANUAL SETUP — search for "TODO" for every spot you still need to edit.
+   MANUAL SETUP, search for "TODO" for every spot you still need to edit.
    ========================================================================= */
 
 /* Mark the document so scroll-reveal styles only apply when JS is running */
@@ -7,7 +7,7 @@ document.documentElement.classList.add("js");
 const CONFIG = {
   GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbwbpd96Qth9A-Ua9YAnMegtSKeVW8jG7GQZVcdxgYmjzKeAVhd3ZgjCbgGJ9upGrkev9A/exec",
   WHATSAPP_NUMBER: "917499817978",
-  // TODO: any random string — must match what your Apps Script checks (optional hardening, not required to work)
+  // TODO: any random string, must match what your Apps Script checks (optional hardening, not required to work)
   SHARED_SECRET: "PASTE_RANDOM_SECRET_TOKEN_HERE",
   CONTACT_EMAIL: "support@washatcomfort.com",
   // From your Cloudinary Dashboard:
@@ -122,11 +122,11 @@ const LEGAL = {
     title: "Terms &amp; Conditions",
     body: `
       <div class="card" style="background:var(--info-bg); border-color:var(--info-border); color:var(--info); padding:12px; font-size:12px">
-        <b>Effective:</b> [TODO: date] • <b>Entity:</b> WashAtComfort — student-run intermediary platform, Pune, India •
+        <b>Effective:</b> [TODO: date] • <b>Entity:</b> WashAtComfort, student-run intermediary platform, Pune, India •
         <b>Jurisdiction:</b> Pune, Maharashtra • <b>Contact:</b> ${CONFIG.CONTACT_EMAIL}
       </div>
-      <h4>1. Platform nature — intermediary only</h4>
-      <p>WashAtComfort connects customers with independent, verified local car washers in Pune. <b>We do not provide car-washing services ourselves</b> — the wash is carried out by an independent washer, not by WashAtComfort as a company or employer.</p>
+      <h4>1. Platform nature, intermediary only</h4>
+      <p>WashAtComfort connects customers with independent, verified local car washers in Pune. <b>We do not provide car-washing services ourselves</b>, the wash is carried out by an independent washer, not by WashAtComfort as a company or employer.</p>
       <h4>2. Booking via photos</h4>
       <p>Submitting the form with car photos is only for quote estimation. The final quote is shared within 2 hours on WhatsApp. No payment is collected on this website.</p>
       <h4>3. Payment terms</h4>
@@ -141,7 +141,7 @@ const LEGAL = {
       </ul>
       <h4>5. For washers / partners</h4>
       <p>Anyone joining our washer network must provide their full name, a working phone number, and a valid photo ID before being introduced to customers. Washers agree to arrive on time, use their own basic cleaning kit, and behave professionally at customer premises.</p>
-      <p>Any complaint of theft, damage, harassment, or other misconduct by a washer will be investigated, may result in immediate removal from the network, and may be reported to the police where warranted. WashAtComfort keeps a record of washer contact and ID details to support any such complaint, but — as an intermediary rather than the washer's employer — does not itself guarantee or insure the outcome of any individual wash.</p>
+      <p>Any complaint of theft, damage, harassment, or other misconduct by a washer will be investigated, may result in immediate removal from the network, and may be reported to the police where warranted. WashAtComfort keeps a record of washer contact and ID details to support any such complaint, but, as an intermediary rather than the washer's employer, does not itself guarantee or insure the outcome of any individual wash.</p>
       <h4>6. Reporting a problem</h4>
       <p>If something goes wrong with a booking on either side, email ${CONFIG.CONTACT_EMAIL} or message us on WhatsApp within 24 hours with the customer/washer name, date, and area. We will look into it and take appropriate action, which may include removing a washer from the network.</p>
     `,
@@ -161,7 +161,7 @@ const LEGAL = {
         <li><b>Photos:</b> up to 3 car photos, used only for quoting</li>
       </ul>
       <h4>2. What we collect from washers</h4>
-      <p>Name, phone number, and photo ID, collected before a washer is added to our network. This is used to verify identity and to support any complaint investigation — not shared publicly.</p>
+      <p>Name, phone number, and photo ID, collected before a washer is added to our network. This is used to verify identity and to support any complaint investigation, not shared publicly.</p>
       <h4>3. Why we collect it</h4>
       <p>To give an accurate quote from your car's photos, connect you with a verified nearby washer, and schedule the visit at your parking spot.</p>
       <h4>4. Sharing &amp; deletion</h4>
@@ -173,7 +173,7 @@ const LEGAL = {
     title: "Disclaimer &amp; Copyright",
     body: `
       <div class="card" style="background:var(--danger-bg); border-color:var(--danger-border); color:var(--danger); padding:12px; font-size:12px">
-        <b>Important:</b> WashAtComfort is an intermediary connecting you with independent, verified washers — it is not itself the car-wash service provider.
+        <b>Important:</b> WashAtComfort is an intermediary connecting you with independent, verified washers, it is not itself the car-wash service provider.
       </div>
       <h4>No liability for washer service</h4>
       <p>WashAtComfort does not carry out the wash itself; the service is delivered by an independent local washer. Customers should inspect their vehicle before and after service, and are encouraged to be present or have someone present during the wash where possible.</p>
@@ -254,7 +254,7 @@ function renderPhotoStrip() {
 }
 
 /* ---------------- Cloudinary upload (replaces the old Google-Drive approach) ----------------
-   No backend, no OAuth, no permission prompts — the browser uploads straight
+   No backend, no OAuth, no permission prompts, the browser uploads straight
    to Cloudinary using an "unsigned" preset, and we get back a permanent link. */
 function uploadPhotosToCloudinary() {
   const endpoint = `https://api.cloudinary.com/v1_1/${CONFIG.CLOUDINARY_CLOUD_NAME}/image/upload`;
@@ -351,7 +351,7 @@ form.addEventListener("submit", async (e) => {
   e.preventDefault();
   topError.style.display = "none";
 
-  // honeypot — if a bot filled this, silently "succeed" without sending anything
+  // honeypot, if a bot filled this, silently "succeed" without sending anything
   if (document.getElementById("website").value.trim() !== "") {
     showSuccess({ name: "", area: "", carType: "", photoUrls: [] });
     return;
@@ -469,7 +469,7 @@ function showSuccess(p) {
   const successState = document.getElementById("successState");
   successState.style.display = "block";
   document.getElementById("successMsg").textContent =
-    `Hi ${p.name || "there"} — we'll WhatsApp you a fixed quote for your ${p.carType || "car"} in ${p.area || "your area"} within 2 hours.`;
+    `Hi ${p.name || "there"}, we'll WhatsApp you a fixed quote for your ${p.carType || "car"} in ${p.area || "your area"} within 2 hours.`;
 
   const submittedData = document.getElementById("submittedData");
   const photoUrls = p.photoUrls || [];
@@ -602,3 +602,62 @@ if (dateInput) dateInput.min = new Date().toISOString().split("T")[0];
 
 const waFab = document.getElementById("waFab");
 if (waFab) waFab.href = waLink("Hi WashAtComfort, I want a car wash quote");
+
+/* ---------------- get-quote buttons on pricing rows ---------------- */
+document.querySelectorAll(".row-quote").forEach((a) => {
+  a.href = waLink(a.dataset.msg);
+});
+
+/* ---------------- monthly savings calculator ---------------- */
+const calcWashes = document.getElementById("calcWashes");
+if (calcWashes) {
+  const update = () => {
+    const w = parseInt(calcWashes.value, 10);
+    document.getElementById("calcWashesVal").textContent = w;
+    const oneTime = w * 350;
+    const monthly = Math.round((w / 8) * 1000);
+    document.getElementById("calcOnetime").textContent = "₹" + oneTime.toLocaleString("en-IN");
+    document.getElementById("calcMonthly").textContent = "₹" + monthly.toLocaleString("en-IN");
+    document.getElementById("calcSave").textContent = "₹" + Math.max(0, oneTime - monthly).toLocaleString("en-IN");
+  };
+  calcWashes.addEventListener("input", update);
+  update();
+}
+
+/* ---------------- coverage checker ---------------- */
+const areaCheckBtn = document.getElementById("areaCheckBtn");
+if (areaCheckBtn) {
+  const covered = ["pashan", "baner", "wakad", "kothrud", "hadapsar", "kharadi", "hinjewadi", "viman nagar", "koregaon park", "aundh", "pimple saudagar", "magarpatta", "warje"];
+  const run = () => {
+    const q = document.getElementById("areaCheck").value.trim().toLowerCase();
+    const res = document.getElementById("areaCheckResult");
+    res.style.display = "";
+    if (!q) { res.textContent = "Please type your area first."; res.style.color = "var(--ink-soft)"; return; }
+    if (covered.some((a) => q.includes(a) || a.includes(q))) {
+      res.innerHTML = '<b style="color: var(--success)">Yes! We cover that area.</b> <a href="#booking" style="color: var(--primary); text-decoration: underline">Book your wash →</a>';
+    } else {
+      res.innerHTML = '<b>Not covered yet</b>, but we’re expanding. <a href="https://wa.me/917499817978?text=Hi%2C%20please%20add%20my%20area%20to%20WashAtComfort" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: underline">Tell us your area on WhatsApp</a>.';
+    }
+  };
+  areaCheckBtn.addEventListener("click", run);
+  document.getElementById("areaCheck").addEventListener("keydown", (e) => { if (e.key === "Enter") run(); });
+}
+
+/* ---------------- washer directory filter ---------------- */
+document.querySelectorAll(".area-btn").forEach((btn) => {
+  btn.addEventListener("click", () => {
+    document
+      .querySelectorAll(".area-btn")
+      .forEach((b) => b.classList.remove("active"));
+    btn.classList.add("active");
+    const area = btn.dataset.area;
+    let visible = 0;
+    document.querySelectorAll(".washer-row").forEach((row) => {
+      const show = area === "all" || row.dataset.area === area;
+      row.style.display = show ? "" : "none";
+      if (show) visible++;
+    });
+    const empty = document.getElementById("washerEmpty");
+    if (empty) empty.style.display = visible ? "none" : "";
+  });
+});
